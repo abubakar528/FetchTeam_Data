@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 async function fetchData() {
   try {
-    const response = await fetch("https://apis-6d99nk5uz-abubakar528.vercel.app/constant.json");
+    const response = await fetch("https://apis-5u3mfhrnx-abubakar528.vercel.app/constant.json");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -27,15 +27,15 @@ export default async function Home() {
           <h1 className='font-bold text-lg'>
           Team Netixsol
             </h1> &nbsp;
-      <div className='flex flex-row w-["400px"] items-center justify-center gap-[30px] p-5 '>
+      <div className='flex flex-row w-1/2 px-2 flex-wrap items-center justify-center gap-[30px] p-5  '>
           {data.map((val:any)=>{
            return (
            <>
-           <div className='flex items-center justify-center flex-col'>
+           <div className='flex items-center justify-center flex-col border border-white-900  rounded-lg w-1/4'>
 
            <h1 className='font-lg font-bold mb-2'>{val.name}</h1>
-           <img src={`${val.img}`} alt='Profile not find' height={100} width={100}/>
-           <h1 className='mt-2'>{val.post}</h1>
+           <img src={`${val.img}`} alt='Profile not find' className='h-[100px] w-[100px] rounded-md'/>
+           <h1 className='mt-2 whitespace-nowrap'>{val.post}</h1>
            </div>
            </>
            
